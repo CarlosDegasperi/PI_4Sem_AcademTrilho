@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Principal GE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="cabecalho">GESTÃO EMPRESARIAL</div>
+
+    <!-- Como chegar? -->
+    <div class="como-chegar">Como chegar?</div>
+
+    <!-- Formulário -->
+    <div class="formulario">
+        <!-- Informações -->
+        <div class="informacoes">
+            MATÉRIA: {{ materia }}<br>
+            PROFESSOR: {{ professor }}<br>
+            SALA: {{ sala }}
+        </div>
+
+        <!-- Data atual -->
+        <div class="data-atual">{{ data_atual }}</div>
+
+        <!-- Data selecionada -->
+        <div class="data-selecionada">{{ data_selecionada }}</div>
+
+        <!-- Horário -->
+        <div class="horario">{{ horario }}</div>
+
+        <!-- Botão Grade Curricular -->
+        <a href="{% url 'grade_curricular' %}" class="botao-grade-curricular">Grade Curricular</a>
+
+        <!-- Botão Como chegar? -->
+        <a href="como_chegar.html" class="botao-como-chegar">Como chegar?</a>
+    </div>
+</body>
+</html>

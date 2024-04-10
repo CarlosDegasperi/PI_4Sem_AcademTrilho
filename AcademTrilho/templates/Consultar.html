@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Cursos e Semestres</title>
+    <link rel="stylesheet" href="Consultar.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consultar Cursos e Semestres</h1>
+        <form action="{% url 'consulta_resultado' %}" method="post">
+            {% csrf_token %}
+            <label for="cursos">Cursos:</label>
+            <select name="cursos" id="cursos">
+                {% for curso in cursos %}
+                    <option value="{{ curso.id }}">{{ curso.nome }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="semestres">Semestres:</label>
+            <select name="semestres" id="semestres">
+                {% for semestre in semestres %}
+                    <option value="{{ semestre.id }}">{{ semestre.nome }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Consultar</button>
+        </form>
+    </div>
+</body>
+</html>
